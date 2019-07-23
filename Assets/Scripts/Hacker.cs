@@ -7,23 +7,35 @@ public class Hacker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ShowMainMenu("Hello Frank");
+        ShowMainMenu();
     }
-    void ShowMainMenu(string greeting)
+    void ShowMainMenu()
     {
         Terminal.ClearScreen();
-        Terminal.WriteLine(greeting);
         //Imprimo en la terminal (accedo a la clase terminal)
-        Terminal.WriteLine("¿Qué te gustaría Hackear?");
-        Terminal.WriteLine("Presioná 1 para la Biblioteca (Fácil)");
-        Terminal.WriteLine("Presioná 2 para la Policía (Medio)");
-        Terminal.WriteLine("Presioná 3 para la NASA (Difícil)");
-        Terminal.WriteLine("Ingresá tu selección:");
+        Terminal.WriteLine("What would you like to hack?");
+        Terminal.WriteLine("Press 1 for the public library");
+        Terminal.WriteLine("Press 2 for the police station");
+        Terminal.WriteLine("Press 3 for the NASA");
+        Terminal.WriteLine("Make your choice:");
 
     }
-    void OnUserInput (string input)  //Using the message method "OnuserInput"
+    void OnUserInput (string input)  //Using the message method "OnUserInput"
     {
-        print(input);
+        if (input == "menu")
+        {
+            ShowMainMenu();
+            Terminal.WriteLine("Now you are in the main menu ");
+        }
+        else if (input == "Iron Man" || input =="iron man")
+        {
+            Terminal.WriteLine("Hi Mr. Stark, what are we hacking today?");
+        }
+        else
+        {
+            Terminal.WriteLine("Invalid input! Please select a valid option");
+
+        }
     }
 
 }

@@ -189,6 +189,11 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 114800869134824038, guid: c46548f7b668a78409fa399c095e4e6b,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1925257292589310, guid: c46548f7b668a78409fa399c095e4e6b, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -219,12 +224,12 @@ PrefabInstance:
     - target: {fileID: 224227349715615220, guid: c46548f7b668a78409fa399c095e4e6b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 16.064
+      value: 42.46
       objectReference: {fileID: 0}
     - target: {fileID: 224227349715615220, guid: c46548f7b668a78409fa399c095e4e6b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 104.66
+      value: 108.2
       objectReference: {fileID: 0}
     - target: {fileID: 224227349715615220, guid: c46548f7b668a78409fa399c095e4e6b,
         type: 3}
@@ -234,12 +239,12 @@ PrefabInstance:
     - target: {fileID: 224227349715615220, guid: c46548f7b668a78409fa399c095e4e6b,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 790
+      value: 828.16
       objectReference: {fileID: 0}
     - target: {fileID: 224227349715615220, guid: c46548f7b668a78409fa399c095e4e6b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 723.1
+      value: 727.5
       objectReference: {fileID: 0}
     - target: {fileID: 1783196620332798, guid: c46548f7b668a78409fa399c095e4e6b, type: 3}
       propertyPath: m_IsActive
@@ -345,6 +350,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1850204993}
+    - target: {fileID: 114399372335518172, guid: c46548f7b668a78409fa399c095e4e6b,
+        type: 3}
+      propertyPath: charactersWide
+      value: 55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46548f7b668a78409fa399c095e4e6b, type: 3}
 --- !u!1 &519420028
@@ -765,7 +775,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1850204995}
   - component: {fileID: 1850204993}
-  - component: {fileID: 1850204994}
   m_Layer: 0
   m_Name: Main Camera 2d
   m_TagString: MainCamera
@@ -816,14 +825,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1850204994
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850204992}
-  m_Enabled: 1
 --- !u!4 &1850204995
 Transform:
   m_ObjectHideFlags: 0
