@@ -19,10 +19,11 @@ public class Hacker : MonoBehaviour
         Terminal.WriteLine("Presioná 2 para la Policía (Medio)");
         Terminal.WriteLine("Presioná 3 para la NASA (Difícil)");
         Terminal.WriteLine("Ingresá tu selección:");
+
     }
-    // Update is called once per frame
-    void Update()
+    void OnUserInput (string input)  //Using the message method "OnuserInput"
     {
-        
+        print(input);
     }
+
 }
