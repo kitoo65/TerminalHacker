@@ -20,6 +20,14 @@ public class Hacker : MonoBehaviour
         Terminal.WriteLine("Make your choice:");
 
     }
+
+    void Level01()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine("Public Library selected.");
+        Terminal.WriteLine("Proceed to write the correct answer");
+        
+    }
     void OnUserInput (string input)  //Using the message method "OnUserInput"
     {
         if (input == "menu")
@@ -31,8 +39,13 @@ public class Hacker : MonoBehaviour
         {
             Terminal.WriteLine("Hi Mr. Stark, what are we hacking today?");
         }
+        else if (input == "1")
+        {
+            Level01();
+        }
         else
         {
+
             Terminal.WriteLine("Invalid input! Please select a valid option");
 
         }
