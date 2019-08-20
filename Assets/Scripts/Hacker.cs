@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,14 +21,7 @@ public class Hacker : MonoBehaviour
         Terminal.WriteLine("Make your choice:");
 
     }
-
-    void Level01()
-    {
-        Terminal.ClearScreen();
-        Terminal.WriteLine("Public Library selected.");
-        Terminal.WriteLine("Proceed to write the correct answer");
-        
-    }
+   
     void OnUserInput (string input)  //Using the message method "OnUserInput"
     {
         if (input == "menu")
@@ -41,7 +35,7 @@ public class Hacker : MonoBehaviour
         }
         else if (input == "1")
         {
-            Level01();
+            StartGame(1);
         }
         else
         {
@@ -51,4 +45,9 @@ public class Hacker : MonoBehaviour
         }
     }
 
+     void StartGame(int level)
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine("You have Chosen level " + level);
+    }
 }
