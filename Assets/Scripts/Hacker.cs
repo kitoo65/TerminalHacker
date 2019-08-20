@@ -23,6 +23,7 @@ public class Hacker : MonoBehaviour
         Terminal.WriteLine("Press 2 for the police station");
         Terminal.WriteLine("Press 3 for the NASA");
         Terminal.WriteLine("Make your choice:");
+        currentScreen = Screen.MainMenu;
 
     }
    
@@ -34,7 +35,16 @@ public class Hacker : MonoBehaviour
             Terminal.WriteLine("Now you are in the main menu ");
             level = 0;
         }
-        else if (input == "Iron Man" || input =="iron man")
+        else if (currentScreen==Screen.MainMenu)
+        {
+            RunGame(input);
+        }
+
+    }
+
+    private void RunGame(string input)
+    {
+        if (input == "Iron Man" || input == "iron man")
         {
             Terminal.WriteLine("Hi Mr. Stark, what are we hacking today?");
         }
@@ -56,7 +66,7 @@ public class Hacker : MonoBehaviour
         }
     }
 
-     void StartGame()
+    void StartGame()
     {
         currentScreen = Screen.Password;
         Terminal.ClearScreen();
