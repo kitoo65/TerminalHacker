@@ -16,7 +16,6 @@ public class Hacker : MonoBehaviour
     Screen currentScreen;
     string password;
 
-
     void Start()
     {
         ShowMainMenu();
@@ -35,8 +34,22 @@ public class Hacker : MonoBehaviour
     }
     void StartGame()
     {
+
         currentScreen = Screen.Password;
         Terminal.ClearScreen();
+        switch (level)
+        {
+            case 1:
+                password = level1Passwords[3];
+                break;
+            case 2:
+                password = level2Passwords[3];
+                break;
+            default:
+                Debug.LogError("Invalid Input");
+                break;
+
+        }
         Terminal.WriteLine("Please enter your password:");
     }
    
@@ -46,7 +59,7 @@ public class Hacker : MonoBehaviour
         {
             ShowMainMenu();
             Terminal.WriteLine("Now you are in the main menu ");
-            level = 0;
+            
         }
         else if (currentScreen==Screen.MainMenu)
         {
@@ -65,6 +78,7 @@ public class Hacker : MonoBehaviour
         if (isValidLevelNumber)
         {
             level = int.Parse(input);
+            StartGame();
         }
         else if (input == "Iron Man" || input == "iron man")
         {
