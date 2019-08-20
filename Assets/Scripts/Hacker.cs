@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class Hacker : MonoBehaviour
 {
-    //Game State
+    //Game State: El level, la screen en donde tamo y la password
     int level;
     enum Screen {MainMenu, Password, Win}
-    Screen currentScreen = Screen.MainMenu;
+    Screen currentScreen;
+    string password;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,12 @@ public class Hacker : MonoBehaviour
         currentScreen = Screen.MainMenu;
 
     }
+    void StartGame()
+    {
+        currentScreen = Screen.Password;
+        Terminal.ClearScreen();
+        Terminal.WriteLine("You have Chosen level " + level);
+    }
    
     void OnUserInput (string input)  //Using the message method "OnUserInput"
     {
@@ -37,12 +44,16 @@ public class Hacker : MonoBehaviour
         }
         else if (currentScreen==Screen.MainMenu)
         {
-            RunGame(input);
+            RunGameMenu(input);
+        }
+        else if (currentScreen == Screen.Password)
+        {
+            CheckPassword(input);
         }
 
-    }
 
-    private void RunGame(string input)
+    }
+    void RunGameMenu(string input)
     {
         if (input == "Iron Man" || input == "iron man")
         {
@@ -51,11 +62,13 @@ public class Hacker : MonoBehaviour
         else if (input == "1")
         {
             level = 1;
+            password = "Books";
             StartGame();
         }
         else if (input == "2")
         {
             level = 2;
+            password = "Jail";
             StartGame();
         }
         else
@@ -66,10 +79,18 @@ public class Hacker : MonoBehaviour
         }
     }
 
-    void StartGame()
+    void CheckPassword(string input)
     {
-        currentScreen = Screen.Password;
-        Terminal.ClearScreen();
-        Terminal.WriteLine("You have Chosen level " + level);
+        if (input==password)
+        {
+            Terminal.WriteLine("WELL DONE!");
+        }
+        else
+        {
+            Terminal.WriteLine("Please try again");
+            
+        }
+        
     }
+
 }
