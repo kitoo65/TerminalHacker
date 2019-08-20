@@ -8,13 +8,15 @@ public class Hacker : MonoBehaviour
 
     //Game Configuration Data:
     string[] level1Passwords = {"books", "aisle", "shelf", "silence", "borrow" };
-    string[] level2Passwords = { "jail", "burglar", "lawyer", "jurisprudence" };
+    string[] level2Passwords = { "jail", "burglar", "lawyer", "jurisprudence", "handcuffs", "holster" };
+
     //Game State: El level, la screen en donde tamo y la password
     int level;
     enum Screen {MainMenu, Password, Win}
     Screen currentScreen;
     string password;
-    // Start is called before the first frame update
+
+
     void Start()
     {
         ShowMainMenu();
@@ -34,7 +36,7 @@ public class Hacker : MonoBehaviour
     void StartGame()
     {
         currentScreen = Screen.Password;
-        Terminal.WriteLine("You have Chosen level " + level);
+        Terminal.ClearScreen();
         Terminal.WriteLine("Please enter your password:");
     }
    
@@ -59,22 +61,16 @@ public class Hacker : MonoBehaviour
     }
     void RunGameMenu(string input)
     {
-        if (input == "Iron Man" || input == "iron man")
+        bool isValidLevelNumber = (input =="1"||input=="2");
+        if (isValidLevelNumber)
+        {
+            level = int.Parse(input);
+        }
+        else if (input == "Iron Man" || input == "iron man")
         {
             Terminal.WriteLine("Hi Mr. Stark, what are we hacking today?");
         }
-        else if (input == "1")
-        {
-            level = 1;
-            password = level1Passwords[2]; //TODO make random later
-            StartGame();
-        }
-        else if (input == "2")
-        {
-            level = 2;
-            password = level2Passwords[2]; //TODO make random later
-            StartGame();
-        }
+        
         else
         {
 
