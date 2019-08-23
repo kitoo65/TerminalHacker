@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Hacker : MonoBehaviour
 {
@@ -34,16 +31,18 @@ public class Hacker : MonoBehaviour
     }
     void StartGame()
     {
-
+        
         currentScreen = Screen.Password;
         Terminal.ClearScreen();
         switch (level)
         {
             case 1:
-                password = level1Passwords[3];
+                int index1 = Random.Range(0, level1Passwords.Length);
+                password = level1Passwords[index1];
                 break;
             case 2:
-                password = level2Passwords[3];
+                int index2 = Random.Range(0, level2Passwords.Length);
+                password = level2Passwords[index2];
                 break;
             default:
                 Debug.LogError("Invalid Input");
