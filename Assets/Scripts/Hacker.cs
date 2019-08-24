@@ -150,7 +150,7 @@ public class Hacker : MonoBehaviour
                 break;
             case 3:
                 Terminal.WriteLine(@"
-  _ __   __ _ ___  __ _ 
+ _ __   __ _ ___  __ _ 
 | '_ \ / _` / __|/ _` |
 | | | | (_| \__ \ (_| |
 |_| |_|\__,_|___/\__,_|
